@@ -12,7 +12,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "lint:js && lint:css",
+    "lint": "lint:text && lint:js && lint:css",
+    "lint:text": "textlint 'docs/**'",
     "lint:js": "eslint .",
     "lint:css": "stylelint 'src/**/*.css' 'src/**/*.scss' './public/index.html'"
   },
@@ -27,9 +28,14 @@
     "husky": "^1.0.0-rc.13",
     "lint-staged": "^7.2.0",
     "prettier": "^1.13.7",
+    "prh": "^5.4.3",
     "stylelint": "^8.0.0",
     "stylelint-config-airbnb": "^0.0.0",
     "stylelint-order": "^0.7.0",
-    "stylelint-scss": "^1.2.1"
+    "stylelint-scss": "^1.2.1",
+    "textlint": "^10.2.1",
+    "textlint-rule-preset-ja-technical-writing": "^3.0.1",
+    "textlint-rule-prh": "^5.0.1",
+    "textlint-rule-spellcheck-tech-word": "^5.0.0"
   }
 }
