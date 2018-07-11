@@ -9,5 +9,11 @@ module.exports = {
   rules: {
     'prettier/prettier': 'error',
     'react/jsx-filename-extension': 0,
+    'import/no-extraneous-dependencies': [
+      0,
+      {
+        devDependencies: ['**/*.stories.js'],
+      },
+    ],
   },
 };
