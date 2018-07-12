@@ -12,14 +12,22 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "lint:text && lint:js && lint:css",
+    "lint": "yarn lint:text && yarn lint:js && yarn lint:css",
+    "lint:fix": "concurrently 'yarn lint:text --fix' 'yarn lint:js --fix' 'yarn lint:css --fix'",
     "lint:text": "textlint 'docs/**'",
     "lint:js": "eslint .",
-    "lint:css": "stylelint 'src/**/*.css' 'src/**/*.scss' './public/index.html'",
+    "lint:css": "stylelint 'src/**/*.{css,scss}' './public/index.html'",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.4.8",
+    "@storybook/addon-links": "^3.4.8",
+    "@storybook/addons": "^3.4.8",
+    "@storybook/react": "^3.4.8",
+    "babel-core": "^6.26.3",
+    "babel-runtime": "^6.26.0",
+    "concurrently": "^3.6.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "17.0.0",
     "eslint-config-prettier": "^2.9.0",
@@ -38,12 +46,6 @@
     "textlint": "^10.2.1",
     "textlint-rule-preset-ja-technical-writing": "^3.0.1",
     "textlint-rule-prh": "^5.0.1",
-    "textlint-rule-spellcheck-tech-word": "^5.0.0",
-    "@storybook/react": "^3.4.8",
-    "@storybook/addon-actions": "^3.4.8",
-    "@storybook/addon-links": "^3.4.8",
-    "@storybook/addons": "^3.4.8",
-    "babel-core": "^6.26.3",
-    "babel-runtime": "^6.26.0"
+    "textlint-rule-spellcheck-tech-word": "^5.0.0"
   }
 }
