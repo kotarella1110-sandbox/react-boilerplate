@@ -1,3 +1,4 @@
 module.exports = {
-  extends: ['stylelint-config-airbnb'],
+  processors: ['stylelint-processor-styled-components'],
+  extends: ['stylelint-config-airbnb', 'stylelint-config-styled-components'],
 };
