@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
+// eslint-disable-next-line import/no-unresolved
+import sel from 'utils/sel';
 import App from '.';
 
 it('renders without crashing', () => {
@@ -14,7 +16,7 @@ it('renders without crashing', () => {
 });
 
 it('renders welcome message', () => {
-  const wrapper = shallow(<App />);
-  const welcome = <h1 className="App-title">Welcome to React</h1>;
-  expect(wrapper.contains(welcome)).toEqual(true);
+  const wrapper = mount(<App />);
+  const welcome = 'Welcome to React';
+  expect(wrapper.find(sel('app-title')).text()).toBe(welcome);
 });
