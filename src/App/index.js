@@ -1,4 +1,5 @@
 import React from 'react';
+import { hot } from 'react-hot-loader';
 import style, { keyframes } from 'styled-components';
 import logo from './logo.svg';
 
@@ -51,4 +52,4 @@ const App = () => (
   </StyledApp>
 );
 
-export default App;
+export default hot(module)(App);
