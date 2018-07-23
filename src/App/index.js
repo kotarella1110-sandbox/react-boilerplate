@@ -31,9 +31,7 @@ const AppLogo = style.img.attrs({
   height: 80px;
 `;
 
-const AppTitle = style.h1.attrs({
-  'data-test': 'app-title',
-})`
+const AppTitle = style.h1`
   font-size: 1.5em;
 `;
 

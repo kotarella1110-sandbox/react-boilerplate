@@ -39,7 +39,6 @@ exports[`FileProperties App Group|App Welcome to Storybook 1`] = `
     />
     <h1
       className="c3"
-      data-test="app-title"
     >
       Welcome to React
     </h1>
