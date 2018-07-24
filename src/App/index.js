@@ -15,6 +15,7 @@ const AppHeader = style.header`
 `;
 
 const spin = keyframes`
+
   from {
     transform: rotate(0deg);
   }
