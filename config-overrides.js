@@ -5,7 +5,11 @@ const rewireStyledComponents = require('react-app-rewire-styled-components');
 
 module.exports = (config, env) => {
   let overrodeConfig = Object.assign({}, config);
-  overrodeConfig = rewireEslint(overrodeConfig, env);
+  overrodeConfig = rewireEslint(overrodeConfig, env, opts => {
+    // eslint-disable-next-line no-param-reassign
+    opts.fix = true;
+    return opts;
+  });
   overrodeConfig = rewireStylelint.withLoaderOptions({
     files: ['public/**/*.{s?(a|c)ss,html}'],
     emitErrors: false,
