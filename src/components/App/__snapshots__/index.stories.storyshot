@@ -48,7 +48,7 @@ exports[`FileProperties App Group|App Welcome to Storybook 1`] = `
   >
     To get started, edit 
     <code>
-      src/App/index.js
+      src/components/App/index.js
     </code>
      and save to reload.
   </p>

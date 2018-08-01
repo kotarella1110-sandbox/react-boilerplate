@@ -1,9 +1,8 @@
 import React from 'react';
-import { hot } from 'react-hot-loader';
 import style, { keyframes } from 'styled-components';
 import logo from './logo.svg';
 
-const StyledApp = style.div`
+const AppWrapper = style.div`
   text-align: center;
 `;
 
@@ -42,15 +41,16 @@ const AppIntro = style.p`
 `;
 
 const App = () => (
-  <StyledApp>
+  <AppWrapper>
     <AppHeader>
       <AppLogo />
       <AppTitle>Welcome to React</AppTitle>
     </AppHeader>
     <AppIntro>
-      To get started, edit <code>src/App/index.js</code> and save to reload.
+      To get started, edit <code>src/components/App/index.js</code> and save to
+      reload.
     </AppIntro>
-  </StyledApp>
+  </AppWrapper>
 );
 
-export default hot(module)(App);
+export default App;

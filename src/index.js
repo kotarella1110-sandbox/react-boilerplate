@@ -1,7 +1,8 @@
+import 'react-hot-loader/patch';
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import { injectGlobal } from 'styled-components';
-import App from './App';
+import App from 'components/App';
 import registerServiceWorker from './registerServiceWorker';
 
 injectGlobal([
@@ -14,5 +15,14 @@ injectGlobal([
 `,
 ]);
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const root = document.getElementById('root');
+render(<App />, root);
 registerServiceWorker();
+
+if (module.hot) {
+  module.hot.accept('components/App', () => {
+    // eslint-disable-next-line global-require
+    require('components/App');
+    render(<App />, root);
+  });
+}
