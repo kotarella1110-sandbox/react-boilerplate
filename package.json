@@ -25,7 +25,8 @@
     "lint:sc": "stylelint 'src/**/*.{js,jsx}'",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.0.0",
@@ -46,6 +47,7 @@
     "babel-runtime": "^6.26.0",
     "commitizen": "^2.10.1",
     "concurrently": "^3.6.0",
+    "conventional-changelog-cli": "^2.0.1",
     "cz-conventional-changelog": "^2.1.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
