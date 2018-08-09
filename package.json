@@ -24,7 +24,8 @@
     "lint:css": "stylelint 'public/**/*.{s?(a|c)ss,html}'",
     "lint:sc": "stylelint 'src/**/*.{js,jsx}'",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "commit": "git-cz"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.0.0",
@@ -43,7 +44,9 @@
     "babel-core": "^6.26.3",
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-runtime": "^6.26.0",
+    "commitizen": "^2.10.1",
     "concurrently": "^3.6.0",
+    "cz-conventional-changelog": "^2.1.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.19.1",
@@ -116,5 +119,10 @@
       "/node_modules/**",
       "/build/**"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

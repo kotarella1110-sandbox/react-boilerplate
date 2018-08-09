@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/kotarella1110/react-boilerplate.svg?branch=master)](https://travis-ci.org/kotarella1110/react-boilerplate)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
