@@ -10,6 +10,8 @@
     "styled-components": "^3.3.3"
   },
   "scripts": {
+    "precommit": "lint-staged",
+    "commitmsg": "commitlint -E GIT_PARAMS",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
@@ -25,6 +27,8 @@
     "build-storybook": "build-storybook -s public"
   },
   "devDependencies": {
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.1",
     "@storybook/addon-actions": "^3.4.8",
     "@storybook/addon-console": "^1.0.4",
     "@storybook/addon-info": "^3.4.8",
@@ -49,7 +53,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.9.1",
-    "husky": "^1.0.0-rc.13",
+    "husky": "^0.14.3",
     "jest-snapshot": "^23.4.1",
     "jest-styled-components": "^5.0.1",
     "lint-staged": "^7.2.0",
@@ -84,5 +88,33 @@
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.9.1"
+  },
+  "lint-staged": {
+    "linters": {
+      "docs/**": [
+        "yarn lint:text --fix",
+        "git add"
+      ],
+      "**/*.{js,jsx}": [
+        "yarn lint:js --fix",
+        "git add"
+      ],
+      "public/**/*.{s?(a|c)ss,html}": [
+        "yarn lint:css --fix",
+        "git add"
+      ],
+      "src/**/*.{js,jsx}": [
+        "yarn lint:sc",
+        "git add"
+      ],
+      "**/*.test.{js,jsx}": [
+        "yarn coverage",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "/node_modules/**",
+      "/build/**"
+    ]
   }
 }
